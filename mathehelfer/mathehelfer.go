@@ -27,6 +27,7 @@ func EineAndereArtSumme(eingabeWerte ...int) int {
 
 	for _, v := range eingabeWerte[1:] {
 
+
 		summe = zweiGanzzahlenAddieren(summe, v)
 	}
 

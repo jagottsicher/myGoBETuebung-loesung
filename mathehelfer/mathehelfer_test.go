@@ -61,3 +61,49 @@ func TestEineAndereArtSumme(t *testing.T) {
 		t.Error("Expected:", "Summe: 6", "got:", wrongOutput)
 	}
 }
+
+func TestDieSummeVonTableTest(t *testing.T) {
+
+	type testData struct {
+		inputInts []int
+		ergebnis  int
+	}
+
+	tests := []testData{
+		testData{[]int{1, 2, 3, 4, 5, 6}, 21},
+		testData{[]int{1, 2, 4, 8, 16}, 31},
+		testData{[]int{1, -2, 3, -4, 5}, 3},
+		testData{[]int{-5, 1, 1, 1, 1, 1}, 0},
+		testData{[]int{6, 5, 4, 3, 2, 1}, 21},
+	}
+
+	for _, v := range tests {
+		v1 := DieSummeVon(v.inputInts...)
+		if v1 != v.ergebnis {
+			t.Error("Expected", v.ergebnis, "got", v1)
+		}
+	}
+}
+
+func TestEineAndereArtSummeTableTest(t *testing.T) {
+
+	type testData struct {
+		inputInts []int
+		ergebnis  int
+	}
+
+	tests := []testData{
+		testData{[]int{1, 2, 3, 4, 5, 6}, 21},
+		testData{[]int{1, 2, 4, 8, 16}, 31},
+		testData{[]int{1, -2, 3, -4, 5}, 3},
+		testData{[]int{-5, 1, 1, 1, 1, 1}, 0},
+		testData{[]int{6, 5, 4, 3, 2, 1}, 21},
+	}
+
+	for _, v := range tests {
+		v1 := EineAndereArtSumme(v.inputInts...)
+		if v1 != v.ergebnis {
+			t.Error("Expected", v.ergebnis, "got", v1)
+		}
+	}
+}
