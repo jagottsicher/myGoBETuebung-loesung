@@ -39,3 +39,25 @@ func ExampleEineAndereArtSumme() {
 	// Output:
 	// Summe: 6
 }
+
+func TestDieSummeVon(t *testing.T) {
+	sliceOfInt := []int{1, 2, 3}
+	// Alternative
+	// wrongOutput := fmt.Sprintf("Summe: %v", DieSummeVon(sliceOfInt...))
+	// if wrongOutput != "Summe: 6" {
+	wrongOutput := fmt.Sprintln("Summe:", DieSummeVon(sliceOfInt...))
+	if wrongOutput != "Summe: 6\n" {
+		t.Error("Expected:", "Summe: 6", "got:", wrongOutput)
+	}
+}
+
+func TestEineAndereArtSumme(t *testing.T) {
+	sliceOfInt := []int{1, 2, 3}
+	// Alternative
+	// wrongOutput := fmt.Sprintf("Summe: %v", EineAndereArtSumme(sliceOfInt...))
+	// if wrongOutput != "Summe: 6" {
+	wrongOutput := fmt.Sprintln("Summe:", EineAndereArtSumme(sliceOfInt...))
+	if wrongOutput != "Summe: 6\n" {
+		t.Error("Expected:", "Summe: 6", "got:", wrongOutput)
+	}
+}
