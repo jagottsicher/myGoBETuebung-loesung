@@ -10,8 +10,7 @@ func DieSummeVon(eingabeWerte ...int) int {
 	}
 
 	return summe
-
-
+}
 func zweiGanzzahlenAddieren(a, b int) int {
 	return a + b
 }
